@@ -3,11 +3,20 @@ $(document).ready(function() {
 
   var toPigLatin = function(phrase) {
     var result;
-    // var vowels = ["a","e","i","o","u"];
+    var stop = false;
+    var vowels = ["a","e","i","o","u"];
 
-    if (phrase.length === 1) {
+    if (phrase.length >= 1 && /* first character is not a letter */) {
+      result = phrase;
+      stop = true;
+    }
+
+    if (!stop && phrase.length === 1 && /*first character is a letter*/ ) {
       result = phrase + "ay";
-    } else {
+      stop = true;
+    }
+
+    if (!stop) {
       result = phrase;
     }
     return result;

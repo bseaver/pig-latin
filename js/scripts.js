@@ -3,11 +3,9 @@ $(document).ready(function() {
 
   var toPigLatin = function(phrase) {
     var result;
-    var vowels = ["a","e","i","o","u"];
-    var firstLetter = phrase.charAt(0);
-    var firstLetterIsVowel = vowels.indexOf(firstLetter) >= 0;
+    // var vowels = ["a","e","i","o","u"];
 
-    if (phrase.length === 1 && firstLetterIsVowel) {
+    if (phrase.length === 1) {
       result = phrase + "ay";
     } else {
       result = phrase;
